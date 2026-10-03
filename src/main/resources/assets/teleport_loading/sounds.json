@@ -1,0 +1,5 @@
+{
+  "loading": {
+    "sounds": [{"name": "teleport_loading:loading", "preload": true}]
+  }
+}

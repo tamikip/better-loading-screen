@@ -1,0 +1,10 @@
+{
+  "arrival": {
+    "sounds": [
+      {
+        "name": "loading_example:arrival",
+        "preload": true
+      }
+    ]
+  }
+}

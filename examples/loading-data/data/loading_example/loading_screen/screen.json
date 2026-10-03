@@ -1,0 +1,20 @@
+{
+  "dimensions": {
+    "example:moon": {
+      "texture": "loading_example:textures/gui/dimensions.png",
+      "width": 1254,
+      "height": 1254,
+      "u": 0,
+      "v": 627,
+      "region_width": 627,
+      "region_height": 627,
+      "base": 100
+    }
+  },
+  "tips": [
+    {
+      "title": "数据包小贴士",
+      "body": "服务器可通过 /reload 更新文案和维度图标映射。"
+    }
+  ]
+}

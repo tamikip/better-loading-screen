@@ -1,0 +1,54 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+group = 'com.tamikip.loading'
+version = '1.2.1'
+base { archivesName = 'teleport-loading-neoforge-1.21.1' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+java.withSourcesJar()
+neoForge {
+    version = '21.1.228'
+    mods { teleport_loading { sourceSet(sourceSets.main) } }
+    runs { client { client() } }
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+tasks.named('processResources') {
+    doLast {
+        def assetRoot = new File(destinationDir, 'assets/teleport_loading')
+        if (!new File(assetRoot, 'font/wenhei.ttf').isFile()) {
+            new File(assetRoot, 'font/tips.json').text = groovy.json.JsonOutput.toJson(
+                [providers: [[type: 'reference', id: 'minecraft:default']]])
+        }
+        if (!new File(assetRoot, 'sounds/loading.ogg').isFile()) {
+            new File(assetRoot, 'sounds.json').text = groovy.json.JsonOutput.toJson([loading: [sounds: []]])
+        }
+    }
+}
+tasks.withType(Jar).configureEach {
+    from('LICENSE', 'NOTICE', 'THIRD_PARTY.md')
+}
+tasks.register('loadingTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.tamikip.loading.LoadingStateTest'
+}
+tasks.named('check') { dependsOn loadingTest }
+tasks.register('styleTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.tamikip.loading.LoadingStyleTest'
+}
+tasks.named('check') { dependsOn styleTest }
+tasks.register('definitionTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.tamikip.loading.LoadingDefinitionTest'
+}
+tasks.named('check') { dependsOn definitionTest }
+tasks.register('commandTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.tamikip.loading.TeleportCommandTest'
+}
+tasks.named('check') { dependsOn commandTest }

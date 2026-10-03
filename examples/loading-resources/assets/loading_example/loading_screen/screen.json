@@ -1,0 +1,34 @@
+{
+  "dimensions": {
+    "example:moon": {
+      "texture": "loading_example:textures/gui/dimensions.png",
+      "width": 1254,
+      "height": 1254,
+      "u": 0,
+      "v": 627,
+      "region_width": 627,
+      "region_height": 627,
+      "base": 100
+    }
+  },
+  "elements": {
+    "texture": "loading_example:textures/gui/elements.png",
+    "width": 2172,
+    "height": 724,
+    "base": 80
+  },
+  "font": "loading_example:ui",
+  "sound": "loading_example:arrival",
+  "tips": [
+    {
+      "title": "资源包小贴士",
+      "body": "此处可以替换成自己的内容。",
+      "translate": false
+    },
+    {
+      "title": "loading.teleport_loading.tip.0.title",
+      "body": "loading.teleport_loading.tip.0.body",
+      "translate": true
+    }
+  ]
+}

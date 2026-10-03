@@ -1,0 +1,14 @@
+build/
+.gradle/
+output/
+__pycache__/
+publishing/
+*.zip
+*.jar
+.env
+.env.*
+gradle.properties
+src/main/resources/assets/teleport_loading/font/wenhei.ttf
+src/main/resources/assets/teleport_loading/sounds/loading.ogg
+examples/loading-resources/assets/loading_example/font/ui.ttf
+examples/loading-resources/assets/loading_example/sounds/arrival.ogg

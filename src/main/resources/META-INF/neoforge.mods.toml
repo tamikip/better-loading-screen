@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="Apache-2.0; third-party assets excluded (see THIRD_PARTY.md)"
+issueTrackerURL="https://github.com/tamikip/better-loading-screen/issues"
+[[mods]]
+modId="teleport_loading"
+version="1.2.1"
+displayName="更好的加载界面"
+displayURL="https://github.com/tamikip/better-loading-screen"
+authors="TamikiP"
+logoFile="logo.png"
+description='''传送到尚未加载、渲染完成的区域时，显示维度图标、小贴士和元素加载进度，地形就绪后平滑淡出。
+支持同维度传送、切换维度、昼夜自动配色、自定义音效，以及资源包／数据包替换文字、图标和 TTF 字体。
+客户端必需，服务端可选；无额外必装模组。
+
+Loading overlay for teleports and dimension transitions, with terrain readiness checks, smooth fading, dimension icons, tips, day/night themes and custom audio. Supports resource/data pack customization. Client required; server optional. No additional mod dependencies.'''
+[[mixins]]
+config="teleport_loading.mixins.json"
+[[dependencies.teleport_loading]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.228,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.teleport_loading]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"
